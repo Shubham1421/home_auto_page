@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Automation Control</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+</head>
+
+
+<body>
+	<h1 class="stylish">Home Automation</h1>
+
+  <!-- div align in center -->
+  <div id="menubar">
+    <ul><li>Home</li>
+      <li>Tutorial</li>
+      <li>Wallpaper</li>
+      <li>Team Work</li>
+      <li>Feedback</li>
+      <li>Contact us</li>
+      <li>About us</li>
+      <li>Blog</li>
+    </ul>
+    </div>
+
+	<div style="display: Flex">
+    <div class="Channel1">
+      <div class="WholeButton">
+        <div  class="stylish LabelSwitch">
+          <h2>Switch 1</h2>
+        </div>
+        <div class="switch">	
+          <input type="checkbox" name="toggle">
+          <label for="toggle"><i></i></label>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="WholeButton">
+        <div  class="stylish LabelSwitch"><h2>Switch 2</h2></div>
+        <div class="switch">	
+          <input type="checkbox" name="toggle">
+          <label for="toggle"><i></i></label>
+          <span></span>
+        </div>
+      </div>
+      <div class="slidecontainer WholeButton">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+      </div>
+
+      <div class="WholeButton">
+        <div  class="stylish LabelSwitch"><h2>Switch 3</h2></div>
+        <div class="switch">	
+          <input type="checkbox" name="toggle">
+          <label for="toggle"><i></i></label>
+          <span></span>
+        </div>
+      </div>
+      <div class="slidecontainer WholeButton">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+      </div>
+      
+    </div>
+    <div class="Channel2">
+      HI
+    </div>
+  </div>
+
+</body>
+
+<style type="text/css">	
+
+	body { background: #202838; }
+
+	.LabelSwitch{width: 50%;}
+  
+  .Channel1{width: 50%;}
+  .Channel2{width: 50%;}
+
+  .stylish{
+		margin-top:35px; 
+		color:#fff; 
+		text-align:center
+	}
+
+	/* for button */
+  .WholeButton{
+    display: Flex;
+    max-width: 900px;
+  }
+
+.switch input {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.switch {
+  width: 180px;
+  height: 55px;
+  position: relative;
+  margin: 40px auto;
+}
+.switch label {
+  display: block;
+  width: 80%;
+  height: 100%;
+  position: relative;
+  background: #1F2736; /*#121823*/
+  background: linear-gradient(#121823, #161d2b);
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: inset 0 3px 8px 1px rgba(0,0,0,0.5),  inset 0 1px 0 rgba(0,0,0,0.5),  0 1px 0 rgba(255,255,255,0.2);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.switch input ~ label i {
+  display: block;
+  height: 51px;
+  width: 51px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  z-index: 2;
+  border-radius: inherit;
+  background: #283446; /* Fallback */
+  background: linear-gradient(#36455b, #283446);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),  0 0 8px rgba(0,0,0,0.3),  0 12px 12px rgba(0,0,0,0.4);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+/*lights of switch*/
+.switch label + span {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  top: 17px;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background: #283446;
+  background: gradient-gradient(#36455b, #283446);
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.2),  0 1px 0 rgba(255,255,255,0.1),  0 0 10px rgba(185,231,253,0),  inset 0 0 8px rgba(0,0,0,0.9),  inset 0 -2px 5px rgba(0,0,0,0.3),  inset 0 -5px 5px rgba(0,0,0,0.5);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  z-index: 2;
+}
+
+/* Toggle */
+.switch input:checked ~ label + span {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  z-index: 2;
+  background: #b9f3fe;
+  background: gradient-gradient(#ffffff, #77a1b9);
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.1),  0 1px 0 rgba(255,255,255,0.1),  0 0 10px rgba(100,231,253,1),  inset 0 0 8px rgba( 61,157,247,0.8),  inset 0 -2px 5px rgba(185,231,253,0.3),  inset 0 -3px 8px rgba(185,231,253,0.5);
+}
+.switch input:checked ~ label i {
+  left: auto;
+  left: 63%;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),  0 0 8px rgba(0,0,0,0.3),  0 8px 8px rgba(0,0,0,0.3),  inset -1px 0 1px #b9f3fe;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+/* For Sliders */
+
+.slider {
+  -webkit-appearance: none;
+  width: 85%;
+  margin-left: 12%;
+  margin-right: 3%;
+  margin-bottom: 10%;
+  height: 17px;
+  border-radius: 5px;  
+  background: #1F2736; /*#121823*/
+  background: linear-gradient(#121823, #161d2b);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; 
+  background: #283446; /* Fallback */
+  background: linear-gradient(#36455b, #283446);
+  cursor: pointer;
+}
+.slider::-moz-range-thumb {
+  width: 30px;
+  height:30px;
+  border-radius: 50%;
+  background: #283446;
+  background: gradient-gradient(#36455b, #283446);
+  cursor: pointer;
+}
+
+/* MENU BAR*/
+#menubar{width:85%; margin-left:auto;  margin-right:auto; margin-top:80px; height:auto;}
+
+    ul {
+      text-transform:uppercase;
+      text-align: left;
+      display: inline;
+      margin: 0;
+      padding: 15px 4px 17px 0;
+      list-style: none;
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    }
+    ul li {
+      font: bold 12px/18px sans-serif;
+      display: inline-block;
+      margin-right: -5px;
+      position: relative;
+      padding: 15px 20px;
+      background: #f7f7f7;
+      color:#6aa25d;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+    ul li:hover {
+      background: #6aa25d;
+      color: #f7f7f7;
+      }
+
+@media only screen and (max-width: 1000px) {
+    body{
+      font-size: small;
+    }
+    .switch{
+      margin-top: 35px;
+      width: 100px;
+      height: 36px;
+    }
+    .switch label {
+      margin-top: 10px;
+      width: 73%;
+    }
+    .switch input ~ label i {
+      height: 31px;
+      width: 31px;
+    }
+    /*lights of switch*/
+    .switch label + span {
+      top: 17px;
+      right: 0px;
+    }
+    .Channel1{width: 100%;}
+    .Channel2{width: 0%;}
+    
+    .slider {
+      height: 15px;
+      margin-bottom: 8%;
+      margin-top: 4%;
+    }
+    .slider::-webkit-slider-thumb {
+      width: 35px;
+      height: 35px;
+    }
+    .slider::-moz-range-thumb {
+      width: 35px;
+      height: 35px;
+    }
+ 
+</style>
+
+</html>
