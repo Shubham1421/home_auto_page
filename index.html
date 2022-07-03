@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home Automation Control</title>
-  <meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-  <style type="text/css">	
+  <title>Home Automation Control</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css"> 
 
     body { background: #202838; 
       -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); /* disable text highlight on click*/
@@ -256,14 +255,6 @@
     }
    
   </style>
-  
-  <script>function toggleCheckbox(element) {
-    var xhr = new XMLHttpRequest();
-    if(element.checked){ xhr.open("GET", "/update?SwitchName="+element.id+"&State=1", true); }
-    else { xhr.open("GET", "/update?SwitchName="+element.id+"&State=0", true); }
-    xhr.send();
-    }
-  </script>
 </head>
 
 <body>
@@ -293,45 +284,45 @@
   </ul>
 </div>
 
-	<h1 class="stylish">Home Automation</h1>
-	<div style="display: Flex">
+  <h1 class="stylish">Home Automation</h1>
+  <div style="display: Flex">
     <div class="Channel1">
       <!-- Switch -->
       <div class="WholeButton">
         <div  class="stylish LabelSwitch">
-          <h2>Switch 1</h2>
+          <h2>Main Lights</h2>
         </div>
-        <div class="switch">	
-          <input type="checkbox" name="toggle" onchange="toggleCheckbox(this)" id="MoodLights" `MoodLights` >
-          <label for="toggle"><i></i></label>
-          <span></span>
-        </div>
-      </div>
-      <!-- Switch -->
-      <div class="WholeButton">
-        <div  class="stylish LabelSwitch"><h2>Switch 2</h2></div>
-        <div class="switch">	
+        <div class="switch">  
           <input type="checkbox" name="toggle" onchange="toggleCheckbox(this)" id="Lights" `Lights` >
           <label for="toggle"><i></i></label>
           <span></span>
         </div>
       </div>
-      <!-- Slider -->
-      <div class="slidecontainer WholeButton">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-      </div>
       <!-- Switch -->
       <div class="WholeButton">
-        <div  class="stylish LabelSwitch"><h2>Switch 3</h2></div>
-        <div class="switch">	
-          <input type="checkbox" name="toggle" >
+        <div  class="stylish LabelSwitch"><h2>Main Fan</h2></div>
+        <div class="switch">  
+          <input type="checkbox" name="toggle" onchange="toggleCheckbox(this)" id="Fan" `Fan` >
           <label for="toggle"><i></i></label>
           <span></span>
         </div>
       </div>
       <!-- Slider -->
       <div class="slidecontainer WholeButton">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <input type="range" min="1" max="9" class="slider" onchange="updateSlider(this)" id="FanSlider" `FanSlider`  >
+      </div>
+      <!-- Switch -->
+      <div class="WholeButton">
+        <div  class="stylish LabelSwitch"><h2>MoodLights</h2></div>
+        <div class="switch">  
+          <input type="checkbox" name="toggle" onchange="toggleCheckbox(this)" id="MoodLights" `MoodLights` >
+          <label for="toggle"><i></i></label>
+          <span></span>
+        </div>
+      </div>
+      <!-- Slider -->
+      <div class="slidecontainer WholeButton">
+        <input type="range" min="1" max="1023" class="slider" onchange="updateSlider(this)" id="MoodLightsSlider" `MoodLightsSlider` >
       </div>
       
     </div>
@@ -342,4 +333,20 @@
 
 </body>
 
+<script>
+function toggleCheckbox(element) {
+  var xhr = new XMLHttpRequest();
+  if(element.checked){ xhr.open("GET", "/updateButton?SwitchName="+element.id+"&State=1", true); }
+  else { xhr.open("GET", "/updateButton?SwitchName="+element.id+"&State=0", true); }
+  xhr.send();
+  }
+
+function updateSlider(element) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/updateSlider?SliderName="+element.id+"&Value="+element.value, true);
+  xhr.send();
+  }
+</script>
+
+</html>
 </html>
